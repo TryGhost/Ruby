@@ -72,6 +72,7 @@ body:not(.canvas-visible) .off-canvas {
 }
 
 .mobile-menu .menu-item {
-    margin: 20px 0;
+    margin: 20px;
     letter-spacing: 0;
 }
+

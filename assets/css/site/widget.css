@@ -77,7 +77,8 @@
     margin-top: 3px;
 }
 
-@media (max-width: 767px) {
+
+@media (max-width: 992px) {
     .widget-title {
         margin-top: 0;
         margin-bottom: 0;
