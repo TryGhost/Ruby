@@ -1,0 +1,3 @@
+[submodule "assets/ghostHunter"]
+	path = assets/ghostHunter
+	url = https://github.com/jamalneufeld/ghostHunter.git

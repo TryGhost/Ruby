@@ -5,11 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{meta_title}}</title>
+    <link rel="icon" type="image/svg+xml" href="{{asset "images/favicon.svg"}}">
     <link rel="stylesheet" href="{{asset "built/screen.css"}}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i%7CDosis:600,700&amp;subset=latin-ext">
 
     {{ghost_head}}
+
+    <script>
+        var ghosthunter_key = process.env.GHOSTHUNTER_KEY;
+        //optional: set your custom ghost_root url, default is `"/ghost/api/v2"`
+        var ghost_root_url = "/ghost/api/v2"
+    </script>
 </head>
 
 <body class="{{body_class}}{{{block "body_class"}}}">
@@ -25,13 +32,49 @@
     {{> pswp}}
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous">
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
         </script>
     <script src="{{asset "built/main.min.js"}}"></script>
+    <script type="text/javascript" src="{{asset "ghostHunter/dist/jquery.ghosthunter.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/ghostHunterConfig.js"}}"></script>
+    <script>
+        var searchField = $("#search-field").ghostHunter({
+            results: "#results",
+            item_preprocessor: itemPreProcessor,
+            result_template: {{{{raw}}}}
+                `
+                    <div id='gh-{{ref}}' class="gh-search-item post-column col-xl-4 col-md-6" style="display: {{display}};">
+                        <article class="post u-shadow">
+                            <div class="post-media">
+                                <div class="u-placeholder same-height rectangle">
+                                    <a class="post-image-link" href="{{link}}">
+                                        <img class="post-image lazyload u-object-fit" src="{{feature_image}}" alt="{{title}}">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="post-wrapper">
+                                <header class="post-header">
+                                    <a class="post-tag" href="{{primary_tag_url}}" style="display: {{primary_tag_display}};">{{primary_tag_name}}</a>
+                                    <h2 class="post-title">
+                                        <a class="post-title-link" href="{{link}}">{{title}}</a>
+                                    </h2>
+                                </header>
+                            <div class="post-excerpt">{{description}}</div>
+                            </div>
+                        </article>
+                    </div>
+                `{{{{/raw}}}},
+            displaySearchInfo: false,
+            zeroResultsInfo: false,
+            indexing_start: indexing_start,
+            indexing_end: indexing_end,
+            onComplete: on_complete,
+            onKeyUp: true
+        });
 
-    {{> facebook}}
-
+        indexing_end()
+    </script>
+    
     {{{block "scripts"}}}
 
     {{ghost_foot}}

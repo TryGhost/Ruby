@@ -4,7 +4,6 @@
 @import "general/form.css";
 @import "general/button.css";
 @import "site/header.css";
-@import "site/social.css";
 @import "site/layout.css";
 @import "site/widget.css";
 @import "site/term.css";
@@ -16,7 +15,6 @@
 @import "blog/page.css";
 @import "blog/featured.css";
 @import "blog/single.css";
-@import "blog/share.css";
 @import "blog/author.css";
 @import "blog/navigation.css";
 @import "blog/comment.css";

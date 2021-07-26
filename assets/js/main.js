@@ -8,7 +8,6 @@ $(function () {
     author();
     stickySidebar();
     pagination();
-    facebook();
     video();
     gallery();
     offCanvas();
@@ -16,9 +15,6 @@ $(function () {
 
 function author() {
     'use strict';
-    $('.author-name').on('click', function () {
-        $(this).next('.author-social').toggleClass('enabled');
-    });
 }
 
 function stickySidebar() {
@@ -57,18 +53,6 @@ function pagination() {
             scrollThreshold: false,
             status: '.infinite-scroll-status',
         });
-    }
-}
-
-function facebook() {
-    'use strict';
-    var widget = $('.widget-facebook');
-
-    if (
-        widget.find('.fb-page').attr('data-href') ==
-        '__YOUR_FACEBOOK_PAGE_URL__'
-    ) {
-        widget.remove();
     }
 }
 

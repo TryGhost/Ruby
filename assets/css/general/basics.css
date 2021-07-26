@@ -3,7 +3,7 @@
     --primary-text-color: #333;
     --secondary-text-color: #aaa;
     --white-color: #fff;
-    --light-gray-color: #f4f4f4;
+    --light-gray-color: #f2f2f2;
     --mid-gray-color: #e9e9e9;
     --dark-gray-color: #1a1a1a;
     --black-color: #000;
@@ -31,7 +31,6 @@ body {
     text-rendering: optimizeLegibility;
     word-break: break-word;
     background-color: var(--light-gray-color);
-    background-color: #f9f9f9;
     transition: background-color 0.3s var(--animation-base);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -134,4 +133,20 @@ hr::before {
 
 hr::after {
     left: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #f4f4f4;
+}
+
+.post-tags {
+    visibility: hidden;
 }

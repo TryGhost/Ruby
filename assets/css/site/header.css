@@ -27,6 +27,7 @@
     display: inline-block;
     margin-right: 15px;
     vertical-align: middle;
+    min-width: 130px;
 }
 
 .logo-image {
@@ -52,4 +53,13 @@
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+}
+
+.search-form {
+    display: flex;
+}
+
+.search-field {
+    display: flex;
+    width: 100%;
 }

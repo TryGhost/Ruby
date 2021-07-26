@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="content-column col-lg-6">
+        <div class="content-column col-lg-9">
             <div class="content-area">
                 <main class="site-main">
                     {{#post}}
@@ -17,13 +17,12 @@
                                 <span
                                     class="post-meta-length">{{reading_time}}</span>
                             </div>
-                            {{> post-media with_caption=true}}
+                            {{> post-media with_caption=true }}
                             <div class="post-wrapper">
                                 <div class="post-content u-text-format">
                                     {{content}}
                                 </div>
                                 {{> tags}}
-                                {{> share}}
                             </div>
                         </article>
                         {{> author}}
@@ -32,9 +31,6 @@
                     {{/post}}
                 </main>
             </div>
-        </div>
-        <div class="related-column col-lg-3 hidden-xs hidden-sm hidden-md">
-            {{> related}}
         </div>
         <div class="sidebar-column col-lg-3 hidden-xs hidden-sm hidden-md">
             {{> widgets/widgets}}

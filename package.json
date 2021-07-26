@@ -1,7 +1,7 @@
 {
     "name": "ruby",
-    "description": "A Ghost theme",
-    "version": "1.0.0",
+    "description": "A Ghost theme, streamlined and searchable",
+    "version": "2.0.0",
     "engines": {
         "ghost": ">=4.0.0",
         "ghost-api": "v4"
@@ -18,7 +18,7 @@
         "ghost-theme"
     ],
     "config": {
-        "posts_per_page": 9,
+        "posts_per_page": 64,
         "image_sizes": {
             "xs": {
                 "width": 150

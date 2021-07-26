@@ -10,6 +10,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Deploy Ghost Theme
         uses: TryGhost/action-deploy-theme@v1.4.1
+        env:
+          GHOSTHUNTER_KEY: ${{ secrets.GHOSTHUNTER_KEY }}
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
