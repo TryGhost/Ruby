@@ -14,28 +14,89 @@
 </head>
 
 <body class="{{body_class}}{{{block "body_class"}}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}">
-    <div class="site">
-        {{> header}}
-        <div class="site-content">
-            {{{body}}}
+<div class="site">
+
+    <header class="site-header">
+        <div class="navbar">
+            <div class="navbar-left">
+                <a class="logo" href="{{@site.url}}">
+                    {{#if @site.logo}}
+                        <img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}">
+                    {{else}}
+                        <span class="logo-text">{{@site.title}}</span>
+                    {{/if}}
+                </a>
+            </div>
+            {{#if @site.navigation}}
+                <nav class="main-menu hidden-xs hidden-sm hidden-md">
+                    {{navigation}}
+                </nav>
+            {{/if}}
+            <div class="navbar-right">
+                <div class="burger hidden-lg hidden-xl">
+                    <div class="burger-bar"></div>
+                    <div class="burger-bar"></div>
+                </div>
+            </div>
         </div>
-        {{> footer}}
+    </header>
+
+    <div class="site-content">
+        {{{body}}}
     </div>
 
-    {{> off-canvas}}
-    {{> pswp}}
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="social">
+                    {{#if @site.facebook}}
+                        <a class="social-item social-item-facebook" href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                            <i class="icon icon-facebook"></i>
+                        </a>
+                    {{/if}}
+                    {{#if @site.twitter}}
+                        <a class="social-item social-item-twitter" href="{{twitter_url @site.twitter}}" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            <i class="icon icon-twitter"></i>
+                        </a>
+                    {{/if}}
+                    <a class="social-item social-item-rss" href="https://feedly.com/i/subscription/feed/{{@site.url}}/rss/" target="_blank" rel="noopener noreferrer" aria-label="RSS">
+                        <i class="icon icon-rss"></i>
+                    </a>
+                </div>
+                <div class="copyright">
+                    Powered by <a href="https://ghost.org/" target="_blank">Ghost</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous">
-        </script>
-    <script src="{{asset "built/main.min.js"}}"></script>
+</div>
 
-    {{> facebook}}
+<div class="dimmer"></div>
 
-    {{{block "scripts"}}}
+<div class="off-canvas">
+    <div class="burger burger-close hidden-lg hidden-xl">
+        <div class="burger-bar"></div>
+        <div class="burger-bar"></div>
+    </div>
+    <div class="mobile-menu">
+        {{navigation}}
+    </div>
+    {{> widgets/widgets}}
+</div>
 
-    {{ghost_foot}}
+{{> pswp}}
+
+<script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous">
+</script>
+<script src="{{asset "built/main.min.js"}}"></script>
+
+{{{block "scripts"}}}
+
+{{ghost_foot}}
+
 </body>
-
 </html>

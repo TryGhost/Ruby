@@ -71,11 +71,6 @@
                 "default": true,
                 "group": "post"
             },
-            "show_share_links": {
-                "type": "boolean",
-                "default": true,
-                "group": "post"
-            },
             "show_author": {
                 "type": "boolean",
                 "default": true,

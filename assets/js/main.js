@@ -1,8 +1,5 @@
 var body = $('body');
 
-window.lazySizesConfig = window.lazySizesConfig || {};
-window.lazySizesConfig.loadHidden = false;
-
 $(function () {
     'use strict';
     author();

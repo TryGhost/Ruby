@@ -4,10 +4,12 @@
     {{#author}}
         <div class="term-author">
             <div class="author-image-placeholder u-placeholder">
-                <img class="author-image lazyload u-object-fit"
-                    data-src="{{img_url profile_image size="xs"}}"
-                    src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-                    alt="{{name}}">
+                <img
+                    class="author-image u-object-fit"
+                    src="{{img_url profile_image size="xs"}}"
+                    alt="{{name}}"
+                    loading="lazy"
+                >
             </div>
             <h1 class="author-name">{{name}}</h1>
         </div>
