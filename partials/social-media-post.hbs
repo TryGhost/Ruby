@@ -1,0 +1,29 @@
+<div class="social-media post-social-media" style="bottom: 60px"> 
+  {{> "social-media"}}
+  <div class="social-media-separator"></div>
+  <div class="social-media-item social-media-share">
+    {{> "icons/share"}}
+    <span>Share</span>
+    <ul class="share-list">
+      {{!-- 比较tricky, 但当前仅能使用这种方式去定义list, 没办法去操作数据层定义变量 --}}
+      <li>
+        <a href="https://twitter.com/share?url={{encode url}}&text={{encode title}}" target="_blank">Twitter</a>
+      </li>
+      <li>
+        <a href="http://www.reddit.com/submit?url={{encode url}}&title={{encode title}}"  target="_blank">Reddit</a>
+      </li>
+      <li>
+        <a data-url="https://www.linkedin.com/cws/share?url={{encode url}}" target="_blank">LinkedIn</a>
+      </li>
+      <li>
+        <a href="http://news.ycombinator.com/submitlink?u={{encode url}}&t={{encode title}}" target="_blank">Hacker News</a>
+      </li>
+      <li>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{encode url}}" target="_blank">Facebook</a>
+      </li>
+      <li>
+        <a href="https://api.whatsapp.com/send?text={{encode title}} {{encode url}}&" target="_blank">WhatsApp</a>
+      </li>
+    </ul>
+  </div>
+</div>

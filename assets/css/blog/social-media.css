@@ -1,0 +1,85 @@
+.social-media {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: none;
+  background-color: #FFF;
+  justify-content: space-around;
+  align-items: center;
+  height: 48px;
+  width: 381px;
+  border-radius: 24px;
+  padding: 0px 8px 0px 8px;
+}
+.social-media-item {
+  cursor: pointer;
+  display: block;
+}
+.social-media span{
+  margin-left: 3px;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+}
+.social-media-separator {
+  width: 1px;
+  height: 16px;
+  background: #E5E6EB;
+  border-radius: 1px;
+}
+.social-media-item:hover path[fill="#1D2129"]{
+  fill:#654AEC;
+}
+.social-media-item:hover path[stroke="#1D2129"] {
+  stroke: #654AEC;
+}
+.social-media-item:hover span {
+  color: #654AEC;
+}
+.post-social-media {
+  background-color: #E5E6EB;
+}
+.social-media-share {
+  position: relative;
+}
+.share-list {
+  display: none;
+  width: 15rem;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  list-style: none;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  background-color: #E5E6EB;
+}
+.share-list li {
+  width: 100%;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  display: flex;
+  border-radius: 0.25rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+.share-list a {
+  display: block;
+  width: 100%;
+}
+.share-list li:hover {
+  background-color: #cacace;
+}
+
+@media (max-width: 767px) {
+  .social-media {
+    width: 221px;
+  }
+  .social-media-item span {
+    display: none;
+  }
+}
