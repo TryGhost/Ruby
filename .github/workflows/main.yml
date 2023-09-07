@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-      - main
+      - cryptodesk
 jobs:
   deploy:
     runs-on: ubuntu-22.04
